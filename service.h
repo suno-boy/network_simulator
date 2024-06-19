@@ -16,6 +16,13 @@ protected:
   short port_;
 
   Service(Host *host, int port) : host_(host), port_(port) {}
+
+public:
+  short getPort();
+  void setPort(short port);
+  virtual void receivePacket(Packet* packet) = 0;
+  virtual ~Service() {};
+
 };
 
 #endif
